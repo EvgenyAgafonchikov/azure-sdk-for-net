@@ -9,7 +9,6 @@ using System.Resources;
 
 [assembly: AssemblyVersion("15.1.0.0")]
 [assembly: AssemblyFileVersion("15.1.0.0")]
-
 [assembly: AssemblyCompany("Microsoft")]
 [assembly: AssemblyProduct("Microsoft Azure .NET SDK")]
 [assembly: AssemblyCopyright("Copyright (c) Microsoft Corporation")]
