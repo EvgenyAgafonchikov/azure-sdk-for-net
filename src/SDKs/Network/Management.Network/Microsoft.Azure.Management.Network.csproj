@@ -7,6 +7,7 @@
     <Version>15.1.0-preview</Version>
     <Version>14.2.0-preview</Version>
     <Version>15.0.0-preview</Version>
+    <Version>15.1.0-preview</Version>
     <PackageTags>Microsoft Azure Network management;Network;Network management;windowsazureofficial</PackageTags>    
   </PropertyGroup>
   <PropertyGroup>
