@@ -41,7 +41,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="tags">Resource tags.</param>
         /// <param name="containerNetworkInterfaces">List of child container
         /// network interfaces.</param>
-        /// <param name="containerNetworkInterfaceConfigurations">List of chid
+        /// <param name="containerNetworkInterfaceConfigurations">List of child
         /// container network interface configurations.</param>
         /// <param name="resourceGuid">The resource GUID property of the
         /// network interface resource.</param>
@@ -72,7 +72,7 @@ namespace Microsoft.Azure.Management.Network.Models
         public IList<ContainerNetworkInterface> ContainerNetworkInterfaces { get; set; }
 
         /// <summary>
-        /// Gets or sets list of chid container network interface
+        /// Gets or sets list of child container network interface
         /// configurations.
         /// </summary>
         [JsonProperty(PropertyName = "properties.containerNetworkInterfaceConfigurations")]

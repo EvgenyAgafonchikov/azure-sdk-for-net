@@ -132,7 +132,7 @@ namespace Networks.Tests
                     },
                     LegacyMode = Convert.ToInt32(true)
                 },
-                RouteFilter = filter
+                //RouteFilter = filter
             };
 
             var peerResponse = nrpClient.ExpressRouteCircuitPeerings.CreateOrUpdate(resourceGroupName, circuitName,
@@ -255,7 +255,7 @@ namespace Networks.Tests
 
             if (!String.IsNullOrEmpty(publicIpAddressId))
             {
-                nicParameters.IpConfigurations[0].PublicIPAddress = new PublicIPAddress() { Id = publicIpAddressId };
+                nicParameters.IpConfigurations[0].PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource() { Id = publicIpAddressId };
             }
 
             // Test NIC apis

@@ -48,7 +48,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
         /// <param name="type">Type of the resource.</param>
-        public ApplicationGatewayBackendAddressPool(string id = default(string), IList<NetworkInterfaceIPConfiguration> backendIPConfigurations = default(IList<NetworkInterfaceIPConfiguration>), IList<ApplicationGatewayBackendAddress> backendAddresses = default(IList<ApplicationGatewayBackendAddress>), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string))
+        public ApplicationGatewayBackendAddressPool(string id = default(string), IList<SubResource> backendIPConfigurations = default(IList<SubResource>), IList<ApplicationGatewayBackendAddress> backendAddresses = default(IList<ApplicationGatewayBackendAddress>), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string))
             : base(id)
         {
             BackendIPConfigurations = backendIPConfigurations;
@@ -70,7 +70,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// interfaces.
         /// </summary>
         [JsonProperty(PropertyName = "properties.backendIPConfigurations")]
-        public IList<NetworkInterfaceIPConfiguration> BackendIPConfigurations { get; set; }
+        public IList<SubResource> BackendIPConfigurations { get; set; }
 
         /// <summary>
         /// Gets or sets backend addresses

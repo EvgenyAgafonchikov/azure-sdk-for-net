@@ -54,7 +54,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// and 'Failed'.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public NetworkSecurityGroup(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<SecurityRule> securityRules = default(IList<SecurityRule>), IList<SecurityRule> defaultSecurityRules = default(IList<SecurityRule>), IList<NetworkInterface> networkInterfaces = default(IList<NetworkInterface>), IList<Subnet> subnets = default(IList<Subnet>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
+        public NetworkSecurityGroup(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<SecurityRule> securityRules = default(IList<SecurityRule>), IList<SecurityRule> defaultSecurityRules = default(IList<SecurityRule>), IList<SubResource> networkInterfaces = default(IList<SubResource>), IList<SubResource> subnets = default(IList<SubResource>), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             SecurityRules = securityRules;
@@ -89,13 +89,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets a collection of references to network interfaces.
         /// </summary>
         [JsonProperty(PropertyName = "properties.networkInterfaces")]
-        public IList<NetworkInterface> NetworkInterfaces { get; private set; }
+        public IList<SubResource> NetworkInterfaces { get; private set; }
 
         /// <summary>
         /// Gets a collection of references to subnets.
         /// </summary>
         [JsonProperty(PropertyName = "properties.subnets")]
-        public IList<Subnet> Subnets { get; private set; }
+        public IList<SubResource> Subnets { get; private set; }
 
         /// <summary>
         /// Gets or sets the resource GUID property of the network security

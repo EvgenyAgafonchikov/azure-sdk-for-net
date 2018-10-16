@@ -125,7 +125,7 @@ namespace Networks.Tests
                         {
                              Name = ipConfigName,
                              PrivateIPAllocationMethod = IPAllocationMethod.Dynamic,
-                             PublicIPAddress = new PublicIPAddress ()
+                             PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource ()
                              {
                                  Id = getPublicIpAddressResponse.Id
                              },
@@ -405,7 +405,7 @@ namespace Networks.Tests
                              Name = ipConfigName,
                              PrivateIPAllocationMethod = IPAllocationMethod.Dynamic,
                              Primary = true,
-                             PublicIPAddress = new PublicIPAddress ()
+                             PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource ()
                              {
                                  Id = getPublicIpAddressResponse.Id
                              },
@@ -1220,7 +1220,10 @@ namespace Networks.Tests
                              }
                         }
                     },
-                    NetworkSecurityGroup = putNsgResponse
+                    NetworkSecurityGroup = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = putNsgResponse.Id
+                    }
                 };
 
                 // Test NIC apis
@@ -1359,7 +1362,10 @@ namespace Networks.Tests
                              }
                         }
                     },
-                    NetworkSecurityGroup = putNsgResponse
+                    NetworkSecurityGroup = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = putNsgResponse.Id
+                    }
                 };
 
                 // Test NIC apis
@@ -1463,7 +1469,10 @@ namespace Networks.Tests
                         {
                             Name = subnetName,
                             AddressPrefix = "10.0.0.0/24",
-                            RouteTable = putRouteTableResponse
+                            RouteTable = new Microsoft.Azure.Management.Network.Models.SubResource
+                            {
+                                Id = putRouteTableResponse.Id
+                            }
                         }
                     }
                 };

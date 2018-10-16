@@ -63,7 +63,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// the resource is updated.</param>
         /// <param name="zones">A list of availability zones denoting the IP
         /// allocated for the resource needs to come from.</param>
-        public FrontendIPConfiguration(string id = default(string), IList<SubResource> inboundNatRules = default(IList<SubResource>), IList<SubResource> inboundNatPools = default(IList<SubResource>), IList<SubResource> outboundRules = default(IList<SubResource>), IList<SubResource> loadBalancingRules = default(IList<SubResource>), string privateIPAddress = default(string), string privateIPAllocationMethod = default(string), Subnet subnet = default(Subnet), PublicIPAddress publicIPAddress = default(PublicIPAddress), SubResource publicIPPrefix = default(SubResource), string provisioningState = default(string), string name = default(string), string etag = default(string), IList<string> zones = default(IList<string>))
+        public FrontendIPConfiguration(string id = default(string), IList<SubResource> inboundNatRules = default(IList<SubResource>), IList<SubResource> inboundNatPools = default(IList<SubResource>), IList<SubResource> outboundRules = default(IList<SubResource>), IList<SubResource> loadBalancingRules = default(IList<SubResource>), string privateIPAddress = default(string), string privateIPAllocationMethod = default(string), SubResource subnet = default(SubResource), SubResource publicIPAddress = default(SubResource), SubResource publicIPPrefix = default(SubResource), string provisioningState = default(string), string name = default(string), string etag = default(string), IList<string> zones = default(IList<string>))
             : base(id)
         {
             InboundNatRules = inboundNatRules;
@@ -129,13 +129,13 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets the reference of the subnet resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.subnet")]
-        public Subnet Subnet { get; set; }
+        public SubResource Subnet { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the Public IP resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.publicIPAddress")]
-        public PublicIPAddress PublicIPAddress { get; set; }
+        public SubResource PublicIPAddress { get; set; }
 
         /// <summary>
         /// Gets or sets the reference of the Public IP Prefix resource.

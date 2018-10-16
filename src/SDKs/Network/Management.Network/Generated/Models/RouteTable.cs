@@ -51,7 +51,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// 'Failed'.</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public RouteTable(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<Route> routes = default(IList<Route>), IList<Subnet> subnets = default(IList<Subnet>), bool? disableBgpRoutePropagation = default(bool?), string provisioningState = default(string), string etag = default(string))
+        public RouteTable(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), IList<Route> routes = default(IList<Route>), IList<SubResource> subnets = default(IList<SubResource>), bool? disableBgpRoutePropagation = default(bool?), string provisioningState = default(string), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             Routes = routes;
@@ -77,7 +77,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets a collection of references to subnets.
         /// </summary>
         [JsonProperty(PropertyName = "properties.subnets")]
-        public IList<Subnet> Subnets { get; private set; }
+        public IList<SubResource> Subnets { get; private set; }
 
         /// <summary>
         /// Gets or sets whether to disable the routes learned by BGP on that

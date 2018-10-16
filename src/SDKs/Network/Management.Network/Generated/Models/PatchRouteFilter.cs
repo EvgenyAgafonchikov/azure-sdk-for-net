@@ -49,7 +49,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// the resource is updated.</param>
         /// <param name="type">Resource type.</param>
         /// <param name="tags">Resource tags.</param>
-        public PatchRouteFilter(string id = default(string), IList<RouteFilterRule> rules = default(IList<RouteFilterRule>), IList<ExpressRouteCircuitPeering> peerings = default(IList<ExpressRouteCircuitPeering>), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
+        public PatchRouteFilter(string id = default(string), IList<RouteFilterRule> rules = default(IList<RouteFilterRule>), IList<SubResource> peerings = default(IList<SubResource>), string provisioningState = default(string), string name = default(string), string etag = default(string), string type = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>))
             : base(id)
         {
             Rules = rules;
@@ -79,7 +79,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// peerings.
         /// </summary>
         [JsonProperty(PropertyName = "properties.peerings")]
-        public IList<ExpressRouteCircuitPeering> Peerings { get; set; }
+        public IList<SubResource> Peerings { get; set; }
 
         /// <summary>
         /// Gets the provisioning state of the resource. Possible values are:

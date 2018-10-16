@@ -85,7 +85,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public SecurityRule(string protocol, string access, string direction, string id = default(string), string description = default(string), string sourcePortRange = default(string), string destinationPortRange = default(string), string sourceAddressPrefix = default(string), IList<string> sourceAddressPrefixes = default(IList<string>), IList<ApplicationSecurityGroup> sourceApplicationSecurityGroups = default(IList<ApplicationSecurityGroup>), string destinationAddressPrefix = default(string), IList<string> destinationAddressPrefixes = default(IList<string>), IList<ApplicationSecurityGroup> destinationApplicationSecurityGroups = default(IList<ApplicationSecurityGroup>), IList<string> sourcePortRanges = default(IList<string>), IList<string> destinationPortRanges = default(IList<string>), int? priority = default(int?), string provisioningState = default(string), string name = default(string), string etag = default(string))
+        public SecurityRule(string protocol, string access, string direction, string id = default(string), string description = default(string), string sourcePortRange = default(string), string destinationPortRange = default(string), string sourceAddressPrefix = default(string), IList<string> sourceAddressPrefixes = default(IList<string>), IList<SubResource> sourceApplicationSecurityGroups = default(IList<SubResource>), string destinationAddressPrefix = default(string), IList<string> destinationAddressPrefixes = default(IList<string>), IList<SubResource> destinationApplicationSecurityGroups = default(IList<SubResource>), IList<string> sourcePortRanges = default(IList<string>), IList<string> destinationPortRanges = default(IList<string>), int? priority = default(int?), string provisioningState = default(string), string name = default(string), string etag = default(string))
             : base(id)
         {
             Description = description;
@@ -163,7 +163,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets the application security group specified as source.
         /// </summary>
         [JsonProperty(PropertyName = "properties.sourceApplicationSecurityGroups")]
-        public IList<ApplicationSecurityGroup> SourceApplicationSecurityGroups { get; set; }
+        public IList<SubResource> SourceApplicationSecurityGroups { get; set; }
 
         /// <summary>
         /// Gets or sets the destination address prefix. CIDR or destination IP
@@ -186,7 +186,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// destination.
         /// </summary>
         [JsonProperty(PropertyName = "properties.destinationApplicationSecurityGroups")]
-        public IList<ApplicationSecurityGroup> DestinationApplicationSecurityGroups { get; set; }
+        public IList<SubResource> DestinationApplicationSecurityGroups { get; set; }
 
         /// <summary>
         /// Gets or sets the source port ranges.

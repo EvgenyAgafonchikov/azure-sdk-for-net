@@ -66,7 +66,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public InboundNatRule(string id = default(string), SubResource frontendIPConfiguration = default(SubResource), NetworkInterfaceIPConfiguration backendIPConfiguration = default(NetworkInterfaceIPConfiguration), string protocol = default(string), int? frontendPort = default(int?), int? backendPort = default(int?), int? idleTimeoutInMinutes = default(int?), bool? enableFloatingIP = default(bool?), bool? enableTcpReset = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
+        public InboundNatRule(string id = default(string), SubResource frontendIPConfiguration = default(SubResource), SubResource backendIPConfiguration = default(SubResource), string protocol = default(string), int? frontendPort = default(int?), int? backendPort = default(int?), int? idleTimeoutInMinutes = default(int?), bool? enableFloatingIP = default(bool?), bool? enableTcpReset = default(bool?), string provisioningState = default(string), string name = default(string), string etag = default(string))
             : base(id)
         {
             FrontendIPConfiguration = frontendIPConfiguration;
@@ -100,7 +100,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// frontend IP configurations is forwarded to the backend IP.
         /// </summary>
         [JsonProperty(PropertyName = "properties.backendIPConfiguration")]
-        public NetworkInterfaceIPConfiguration BackendIPConfiguration { get; private set; }
+        public SubResource BackendIPConfiguration { get; private set; }
 
         /// <summary>
         /// Gets or sets possible values include: 'Udp', 'Tcp', 'All'

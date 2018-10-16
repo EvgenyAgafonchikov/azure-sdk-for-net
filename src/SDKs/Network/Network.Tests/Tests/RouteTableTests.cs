@@ -270,7 +270,7 @@ namespace Network.Tests.Tests
                         {
                             Name = subnetName,
                             AddressPrefix = "10.0.0.0/24",
-                            RouteTable = new RouteTable()
+                            RouteTable = new Microsoft.Azure.Management.Network.Models.SubResource()
                                 {
                                     Id = getRouteTableResponse.Id,
                                 }

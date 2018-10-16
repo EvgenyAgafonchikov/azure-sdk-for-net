@@ -67,7 +67,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// the resource is updated.</param>
         /// <param name="zones">A list of availability zones denoting the IP
         /// allocated for the resource needs to come from.</param>
-        public PublicIPAddress(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), PublicIPAddressSku sku = default(PublicIPAddressSku), string publicIPAllocationMethod = default(string), string publicIPAddressVersion = default(string), IPConfiguration ipConfiguration = default(IPConfiguration), PublicIPAddressDnsSettings dnsSettings = default(PublicIPAddressDnsSettings), IList<IpTag> ipTags = default(IList<IpTag>), string ipAddress = default(string), SubResource publicIPPrefix = default(SubResource), int? idleTimeoutInMinutes = default(int?), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string), IList<string> zones = default(IList<string>))
+        public PublicIPAddress(string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), PublicIPAddressSku sku = default(PublicIPAddressSku), string publicIPAllocationMethod = default(string), string publicIPAddressVersion = default(string), SubResource ipConfiguration = default(SubResource), PublicIPAddressDnsSettings dnsSettings = default(PublicIPAddressDnsSettings), IList<IpTag> ipTags = default(IList<IpTag>), string ipAddress = default(string), SubResource publicIPPrefix = default(SubResource), int? idleTimeoutInMinutes = default(int?), string resourceGuid = default(string), string provisioningState = default(string), string etag = default(string), IList<string> zones = default(IList<string>))
             : base(id, name, type, location, tags)
         {
             Sku = sku;
@@ -116,7 +116,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets the IP configuration associated with the public IP address.
         /// </summary>
         [JsonProperty(PropertyName = "properties.ipConfiguration")]
-        public IPConfiguration IpConfiguration { get; private set; }
+        public SubResource IpConfiguration { get; private set; }
 
         /// <summary>
         /// Gets or sets the FQDN of the DNS record associated with the public

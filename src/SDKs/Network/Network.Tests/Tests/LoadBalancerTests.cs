@@ -73,7 +73,7 @@ namespace Networks.Tests
                         new FrontendIPConfiguration()
                         {
                             Name = frontendIpConfigName,
-                            PublicIPAddress = new PublicIPAddress()
+                            PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource()
                             {
                                 Id = lbPublicIp.Id
                             }
@@ -1158,7 +1158,7 @@ namespace Networks.Tests
                         new FrontendIPConfiguration()
                         {
                             Name = frontendIpConfigName,
-                            PublicIPAddress = new PublicIPAddress()
+                            PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource()
                             {
                                 Id = lbPublicIp.Id
                             }
@@ -1249,22 +1249,22 @@ namespace Networks.Tests
                 var getLoadBalancer = networkManagementClient.LoadBalancers.Get(resourceGroupName, lbName);
 
                 // Associate the nic with LB
-                nic1.IpConfigurations.First().LoadBalancerBackendAddressPools = new List<BackendAddressPool>
+                nic1.IpConfigurations.First().LoadBalancerBackendAddressPools = new List<Microsoft.Azure.Management.Network.Models.SubResource>
                                                                                     {
                                                                                         getLoadBalancer.BackendAddressPools.First()
                                                                                     };
 
-                nic1.IpConfigurations.First().LoadBalancerInboundNatRules = new List<InboundNatRule>
+                nic1.IpConfigurations.First().LoadBalancerInboundNatRules = new List<Microsoft.Azure.Management.Network.Models.SubResource>
                                                                                     {
                                                                                         getLoadBalancer.InboundNatRules.First()
                                                                                     };
 
-                nic2.IpConfigurations.First().LoadBalancerBackendAddressPools = new List<BackendAddressPool>
+                nic2.IpConfigurations.First().LoadBalancerBackendAddressPools = new List<Microsoft.Azure.Management.Network.Models.SubResource>
                                                                                     {
                                                                                         getLoadBalancer.BackendAddressPools.First()
                                                                                     };
 
-                nic3.IpConfigurations.First().LoadBalancerInboundNatRules = new List<InboundNatRule>
+                nic3.IpConfigurations.First().LoadBalancerInboundNatRules = new List<Microsoft.Azure.Management.Network.Models.SubResource>
                                                                                     {
                                                                                         getLoadBalancer.InboundNatRules[1]
                                                                                     };
@@ -1350,7 +1350,7 @@ namespace Networks.Tests
                         new FrontendIPConfiguration()
                         {
                             Name = frontendIpConfigName,
-                            PublicIPAddress = new PublicIPAddress ()
+                            PublicIPAddress = new Microsoft.Azure.Management.Network.Models.SubResource ()
                             {
                                 Id = lbPublicIp.Id
                             }

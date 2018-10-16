@@ -401,8 +401,14 @@ namespace Networks.Tests
                 var virtualNetworkGatewayConneciton = new VirtualNetworkGatewayConnection()
                 {
                     Location = location,
-                    VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
-                    LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
+                    VirtualNetworkGateway1 = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = getVirtualNetworkGatewayResponse.Id
+                    },
+                    LocalNetworkGateway2 = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = getLocalNetworkGatewayResponse.Id
+                    },
                     ConnectionType = VirtualNetworkGatewayConnectionType.IPsec,
                     RoutingWeight = 3,
                     SharedKey = "abc",
@@ -418,8 +424,8 @@ namespace Networks.Tests
                     "ConnectionStatus={9}, EgressBytesTransferred={10}, IngressBytesTransferred={11}, EnableBgp={12}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.ConnectionType, getVirtualNetworkGatewayConnectionResponse.RoutingWeight,
                     getVirtualNetworkGatewayConnectionResponse.SharedKey, getVirtualNetworkGatewayConnectionResponse.ConnectionStatus,
                     getVirtualNetworkGatewayConnectionResponse.EgressBytesTransferred, getVirtualNetworkGatewayConnectionResponse.IngressBytesTransferred,
@@ -556,8 +562,14 @@ namespace Networks.Tests
                 var virtualNetworkGatewayConnection = new VirtualNetworkGatewayConnection()
                 {
                     Location = location,
-                    VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
-                    LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
+                    VirtualNetworkGateway1 = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = getVirtualNetworkGatewayResponse.Id
+                    },
+                    LocalNetworkGateway2 = new Microsoft.Azure.Management.Network.Models.SubResource
+                    {
+                        Id = getLocalNetworkGatewayResponse.Id
+                    },
                     ConnectionType = VirtualNetworkGatewayConnectionType.IPsec,
                     RoutingWeight = 3,
                     SharedKey = "abc"
@@ -588,8 +600,8 @@ namespace Networks.Tests
                     "IpsecPolicies Count={6}, UsePolicyBasedTS={7}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.IpsecPolicies.Count, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
 
                 Assert.Equal(VirtualNetworkGatewayConnectionType.IPsec, getVirtualNetworkGatewayConnectionResponse.ConnectionType);
@@ -630,8 +642,8 @@ namespace Networks.Tests
                     "IpsecPolicies Count={6}, UsePolicyBasedTS={7}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.IpsecPolicies.Count, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
 
                 Assert.Equal(virtualNetworkGatewayConnection.UsePolicyBasedTrafficSelectors, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
@@ -657,8 +669,8 @@ namespace Networks.Tests
                     "IpsecPolicies Count={6}, UsePolicyBasedTS={7}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.IpsecPolicies.Count, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
 
                 Assert.Equal(virtualNetworkGatewayConnection.UsePolicyBasedTrafficSelectors, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
@@ -794,8 +806,8 @@ namespace Networks.Tests
                 var virtualNetworkGatewayConneciton = new VirtualNetworkGatewayConnection()
                 {
                     Location = location,
-                    VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
-                    LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
+                    //VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
+                    //LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
                     ConnectionType = VirtualNetworkGatewayConnectionType.IPsec,
                     RoutingWeight = 3,
                     SharedKey = "abc"
@@ -809,8 +821,8 @@ namespace Networks.Tests
                     "ConnectionStatus={9}, EgressBytesTransferred={10}, IngressBytesTransferred={11}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.ConnectionType, getVirtualNetworkGatewayConnectionResponse.RoutingWeight,
                     getVirtualNetworkGatewayConnectionResponse.SharedKey, getVirtualNetworkGatewayConnectionResponse.ConnectionStatus,
                     getVirtualNetworkGatewayConnectionResponse.EgressBytesTransferred, getVirtualNetworkGatewayConnectionResponse.IngressBytesTransferred);
@@ -840,8 +852,8 @@ namespace Networks.Tests
                     "ConnectionStatus={9}, EgressBytesTransferred={10}, IngressBytesTransferred={11}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.ConnectionType, getVirtualNetworkGatewayConnectionResponse.RoutingWeight,
                     getVirtualNetworkGatewayConnectionResponse.SharedKey, getVirtualNetworkGatewayConnectionResponse.ConnectionStatus,
                     getVirtualNetworkGatewayConnectionResponse.EgressBytesTransferred, getVirtualNetworkGatewayConnectionResponse.IngressBytesTransferred);
@@ -982,8 +994,8 @@ namespace Networks.Tests
                 var virtualNetworkGatewayConneciton = new VirtualNetworkGatewayConnection()
                 {
                     Location = location,
-                    VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
-                    LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
+                    //VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
+                    //LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
                     ConnectionType = VirtualNetworkGatewayConnectionType.IPsec,
                     RoutingWeight = 3,
                     SharedKey = "abc"
@@ -1540,8 +1552,8 @@ namespace Networks.Tests
                         VirtualNetworkGatewayConnection gw1ToGw2Conn = new VirtualNetworkGatewayConnection()
                         {
                             Location = location,
-                            VirtualNetworkGateway1 = gw1GetResponse,
-                            VirtualNetworkGateway2 = gw2GetResponse,
+                            //VirtualNetworkGateway1 = gw1GetResponse,
+                            //VirtualNetworkGateway2 = gw2GetResponse,
                             ConnectionType = VirtualNetworkGatewayConnectionType.Vnet2Vnet,
                             RoutingWeight = 3,
                             SharedKey = sharedKey,
@@ -1555,8 +1567,8 @@ namespace Networks.Tests
                         VirtualNetworkGatewayConnection gw2ToGw1Conn = new VirtualNetworkGatewayConnection()
                         {
                             Location = location,
-                            VirtualNetworkGateway1 = gw2GetResponse,
-                            VirtualNetworkGateway2 = gw1GetResponse,
+                            //VirtualNetworkGateway1 = gw2GetResponse,
+                            //VirtualNetworkGateway2 = gw1GetResponse,
                             ConnectionType = VirtualNetworkGatewayConnectionType.Vnet2Vnet,
                             RoutingWeight = 3,
                             SharedKey = sharedKey,
@@ -1851,8 +1863,8 @@ namespace Networks.Tests
                 var virtualNetworkGatewayConnection = new VirtualNetworkGatewayConnection()
                 {
                     Location = location,
-                    VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
-                    LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
+                    //VirtualNetworkGateway1 = getVirtualNetworkGatewayResponse,
+                    //LocalNetworkGateway2 = getLocalNetworkGatewayResponse,
                     ConnectionType = VirtualNetworkGatewayConnectionType.IPsec,
                     RoutingWeight = 3,
                     SharedKey = "abc"
@@ -1884,8 +1896,8 @@ namespace Networks.Tests
                                   "IpsecPolicies Count={6}, UsePolicyBasedTS={7}",
                     getVirtualNetworkGatewayConnectionResponse.Location, getVirtualNetworkGatewayConnectionResponse.Id,
                     getVirtualNetworkGatewayConnectionResponse.Name,
-                    getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
-                    getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Name, getVirtualNetworkGatewayConnectionResponse.VirtualNetworkGateway1.Id,
+                    //getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Name, getVirtualNetworkGatewayConnectionResponse.LocalNetworkGateway2.Id,
                     getVirtualNetworkGatewayConnectionResponse.IpsecPolicies.Count, getVirtualNetworkGatewayConnectionResponse.UsePolicyBasedTrafficSelectors);
 
                 // List supported Vpn Devices

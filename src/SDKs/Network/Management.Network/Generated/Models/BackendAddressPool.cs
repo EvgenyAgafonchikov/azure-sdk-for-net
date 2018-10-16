@@ -49,7 +49,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// resource.</param>
         /// <param name="etag">A unique read-only string that changes whenever
         /// the resource is updated.</param>
-        public BackendAddressPool(string id = default(string), IList<NetworkInterfaceIPConfiguration> backendIPConfigurations = default(IList<NetworkInterfaceIPConfiguration>), IList<SubResource> loadBalancingRules = default(IList<SubResource>), SubResource outboundRule = default(SubResource), string provisioningState = default(string), string name = default(string), string etag = default(string))
+        public BackendAddressPool(string id = default(string), IList<SubResource> backendIPConfigurations = default(IList<SubResource>), IList<SubResource> loadBalancingRules = default(IList<SubResource>), SubResource outboundRule = default(SubResource), string provisioningState = default(string), string name = default(string), string etag = default(string))
             : base(id)
         {
             BackendIPConfigurations = backendIPConfigurations;
@@ -71,7 +71,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// interfaces.
         /// </summary>
         [JsonProperty(PropertyName = "properties.backendIPConfigurations")]
-        public IList<NetworkInterfaceIPConfiguration> BackendIPConfigurations { get; private set; }
+        public IList<SubResource> BackendIPConfigurations { get; private set; }
 
         /// <summary>
         /// Gets load balancing rules that use this backend address pool.

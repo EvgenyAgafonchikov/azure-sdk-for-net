@@ -81,7 +81,7 @@ namespace Microsoft.Azure.Management.Network.Models
         /// for data forwarding</param>
         /// <param name="etag">Gets a unique read-only string that changes
         /// whenever the resource is updated.</param>
-        public VirtualNetworkGatewayConnection(VirtualNetworkGateway virtualNetworkGateway1, string connectionType, string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string authorizationKey = default(string), VirtualNetworkGateway virtualNetworkGateway2 = default(VirtualNetworkGateway), LocalNetworkGateway localNetworkGateway2 = default(LocalNetworkGateway), string connectionProtocol = default(string), int? routingWeight = default(int?), string sharedKey = default(string), string connectionStatus = default(string), IList<TunnelConnectionHealth> tunnelConnectionStatus = default(IList<TunnelConnectionHealth>), long? egressBytesTransferred = default(long?), long? ingressBytesTransferred = default(long?), SubResource peer = default(SubResource), bool? enableBgp = default(bool?), bool? usePolicyBasedTrafficSelectors = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), string resourceGuid = default(string), string provisioningState = default(string), bool? expressRouteGatewayBypass = default(bool?), string etag = default(string))
+        public VirtualNetworkGatewayConnection(SubResource virtualNetworkGateway1, string connectionType, string id = default(string), string name = default(string), string type = default(string), string location = default(string), IDictionary<string, string> tags = default(IDictionary<string, string>), string authorizationKey = default(string), SubResource virtualNetworkGateway2 = default(SubResource), SubResource localNetworkGateway2 = default(SubResource), string connectionProtocol = default(string), int? routingWeight = default(int?), string sharedKey = default(string), string connectionStatus = default(string), IList<TunnelConnectionHealth> tunnelConnectionStatus = default(IList<TunnelConnectionHealth>), long? egressBytesTransferred = default(long?), long? ingressBytesTransferred = default(long?), SubResource peer = default(SubResource), bool? enableBgp = default(bool?), bool? usePolicyBasedTrafficSelectors = default(bool?), IList<IpsecPolicy> ipsecPolicies = default(IList<IpsecPolicy>), string resourceGuid = default(string), string provisioningState = default(string), bool? expressRouteGatewayBypass = default(bool?), string etag = default(string))
             : base(id, name, type, location, tags)
         {
             AuthorizationKey = authorizationKey;
@@ -122,19 +122,19 @@ namespace Microsoft.Azure.Management.Network.Models
         /// Gets or sets the reference to virtual network gateway resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.virtualNetworkGateway1")]
-        public VirtualNetworkGateway VirtualNetworkGateway1 { get; set; }
+        public SubResource VirtualNetworkGateway1 { get; set; }
 
         /// <summary>
         /// Gets or sets the reference to virtual network gateway resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.virtualNetworkGateway2")]
-        public VirtualNetworkGateway VirtualNetworkGateway2 { get; set; }
+        public SubResource VirtualNetworkGateway2 { get; set; }
 
         /// <summary>
         /// Gets or sets the reference to local network gateway resource.
         /// </summary>
         [JsonProperty(PropertyName = "properties.localNetworkGateway2")]
-        public LocalNetworkGateway LocalNetworkGateway2 { get; set; }
+        public SubResource LocalNetworkGateway2 { get; set; }
 
         /// <summary>
         /// Gets or sets gateway connection type. Possible values are:
